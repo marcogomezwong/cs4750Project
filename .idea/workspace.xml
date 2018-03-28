@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b42e0f86-d5b6-4b9b-9ba8-9ad66e8f0de3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SQL/CREATE TABLES.TXT.txt" afterPath="$PROJECT_DIR$/SQL/CREATE TABLES.TXT.txt" />
-    </list>
+    <list default="true" id="b42e0f86-d5b6-4b9b-9ba8-9ad66e8f0de3" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +14,8 @@
       <file leaf-file-name="CREATE TABLES.TXT.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SQL/CREATE TABLES.TXT.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="509">
-              <caret line="60" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+            <state relative-caret-position="492">
+              <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -137,8 +135,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SQL/CREATE TABLES.TXT.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="60" column="27" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+        <state relative-caret-position="492">
+          <caret line="59" column="27" lean-forward="true" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
           <folding />
         </state>
       </provider>
