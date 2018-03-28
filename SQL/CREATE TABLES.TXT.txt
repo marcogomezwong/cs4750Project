@@ -1,0 +1,89 @@
+DROP TABLE IF EXISTS Bathrooms;
+CREATE TABLE Bathrooms (
+    Bathroom_id INT NOT NULL,
+    building VARCHAR(50),
+    floor INT,
+    overall_rating FLOAT,
+    PRIMARY KEY(Bathroom_id)
+    );
+
+DROP TABLE IF EXISTS Users;
+CREATE TABLE Users (
+    account_id INT NOT NULL,
+    bathroom_goer_id INT NOT NULL
+    );
+
+DROP TABLE IF EXISTS Custodians;
+CREATE TABLE Custodians (
+    account_id INT NOT NULL,
+    custodian_id INT NOT NULL,
+    last_name VARCHAR(50),
+    first_name VARCHAR(50),
+    title VARCHAR(50),
+    salary INT,
+    building_id INT NOT NULL,
+    PRIMARY KEY(custodian_id)
+    );
+
+DROP TABLE IF EXISTS Accounts;
+CREATE TABLE Accounts (
+    account_id INT NOT NULL,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    PRIMARY KEY(account_id)
+    );
+
+DROP TABLE IF EXISTS Building;
+CREATE TABLE Building (
+    building_id INT NOT NULL,
+    name VARCHAR(50),
+    numBathrooms INT,
+    gps_longitude FLOAT,
+    gps_latitude FLOAT,
+    PRIMARY KEY (building_id)
+    );
+
+DROP TABLE IF EXISTS Administrator;
+CREATE TABLE Administrator (
+    account_id INT NOT NULL,
+    custodian_id INT NOT NULL
+    );
+
+DROP TABLE IF EXISTS Bathroom_goer;
+CREATE TABLE Bathroom_goer (
+    bathroom_goer_id INT NOT NULL,
+    gender VARCHAR(10),
+    PRIMARY KEY (bathroom_goer_id)
+    );
+
+DROP TABLE IF EXISTS Create_review;
+CREATE TABLE Create_review (
+    review_id INT NOT NULL,
+    bathroom_goer_id INT NOT NULL,
+    bathroom_id INT NOT NULL,
+    rating FLOAT,
+    comment VARCHAR(250),
+    PRIMARY KEY(review_id)
+    );
+
+DROP TABLE IF EXISTS Located_in;
+CREATE TABLE Located_in (
+    bathroom_id INT NOT NULL,
+    building_id INT NOT NULL
+    );
+
+DROP TABLE IF EXISTS Supplies;
+CREATE TABLE Supplies (
+    bathroom_id INT NOT NULL,
+    custodian_id INT NOT NULL
+    );
+
+DROP TABLE IF EXISTS Reports;
+CREATE TABLE Reports (
+    bathroom_id INT NOT NULL,
+    bathroom_goer_id INT NOT NULL
+    );
+
+
+
+
