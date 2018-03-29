@@ -1,0 +1,117 @@
+body {
+	height: 100%
+
+}
+
+
+
+.row{
+	margin-left: 15px;
+	margin-right: -15px;
+}
+
+.home-page-background{
+	background: url(http://plato.cs.virginia.edu/~wcc4ch/Project/rotunda.jpg);
+	background-size: cover;
+	min-height: 100%;
+	min-width: 100%
+}
+
+.home-page-background nav{
+	background:rgba(0,0,0,0.7);
+	border-radius: 5px;
+}
+
+
+.min-headroom{
+	margin-top: 10px;
+}
+
+
+.home-title-contatiner{
+	border-radius: 5px;
+	color: white;
+	background: rgba(0,0,0,0.6);
+}
+
+.centered-text{
+	text-align: center;
+}
+
+.hooPoo-logo{
+	width: 45px;
+	height: 45px;
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	position:relative;
+	float: left;
+	cursor:pointer;
+	top:2px;
+}
+
+
+.navbar-default .navbar-brand {
+	color:white!important;
+	width:16em;
+	padding:13.5px 60px;
+}
+
+
+
+.navbar-collapse{
+	width:auto;
+	border-top: 0;
+	box-shadow: none;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.navbar-collapse.collapse{
+	display: block!important;
+	height:auto!important;
+	padding-bottom: 0;
+	overflow: visible!important;
+}
+
+.navbar-default ul.navbar-nav>li>a{
+	font-size:1.2em;
+	color:white;
+}
+
+
+
+.home-content{
+	padding: 75px 10px 0px 10px;
+}
+
+.home-content h3{
+font-weight: 400;
+padding-top: 20px;
+}
+
+.home-content h1{
+font-weight: bold;
+font-size:34pt;
+padding-bottom: 20px;
+}
+
+.home-title-container{
+	border-radius: 5px;
+	color:white;
+	background:rgba(0,0,0,0.6);
+
+}
+
+.more-headroom{
+	margin-top: 40px;
+}
+
+.home-map{
+	width:100%;
+	height:800px;
+	margin-bottom: 50px;
+}
+
+
+
+
