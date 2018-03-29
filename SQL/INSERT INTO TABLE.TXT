@@ -1,0 +1,37 @@
+INSERT INTO Bathrooms (building_id, floor, overall_rating, longitude, latitude)
+    VALUES (
+        2,
+        2,
+        0,
+        70.2,
+        -20.5
+    );
+
+INSERT INTO Bathrooms (building_id, floor, overall_rating, longitude, latitude)
+    VALUES (
+        3,
+        2,
+        0,
+        70.2,
+        -20.5
+     );
+
+
+INSERT INTO Building (name, numBathrooms)
+    VALUES (
+        "Rice Hall",
+        12
+     );
+
+INSERT INTO Building (name, numBathrooms)
+    VALUES (
+        "Thornton Hall",
+        20
+     );
+
+INSERT INTO Building (name, numBathrooms)
+    VALUES (
+        "Olsson Hall",
+        20
+     );
+

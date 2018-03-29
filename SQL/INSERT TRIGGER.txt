@@ -1,0 +1,6 @@
+CREATE TRIGGER ai_Bathroom AFTER INSERT ON Bathrooms FOR EACH ROW
+        BEGIN
+            UPDATE Building SET
+                    Building.numBathrooms = Building.numBathrooms + 1
+            WHERE Building.building_id = NEW.building_id
+        END
