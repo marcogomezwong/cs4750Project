@@ -1,4 +1,13 @@
-  <!DOCTYPE html>
+<?php
+    session_start();
+    $username = "";
+    if (isset($_SESSION['username']))
+    {
+        $username = $_SESSION['username'];
+    }
+?>  
+
+<!DOCTYPE html>
   <html>
   <head>
     <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
