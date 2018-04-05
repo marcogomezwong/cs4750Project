@@ -22,6 +22,11 @@ body {
 	border-radius: 5px;
 }
 
+.rateForm {
+	background:rgba(0,0,0,0.7)!important;
+	border-radius: 5px!important;
+}
+
 
 .min-headroom{
 	margin-top: 10px;

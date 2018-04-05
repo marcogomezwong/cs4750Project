@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+  </head>
+
+  <body>
+
+   <div class="container">
+    <div class="row min-headroom">
+      <div class="col-xs-12">
+      <nav class="nav navbar-default rateForm" roll="navigation">
+        <div class="navbar-header">
+        <a class="hooPoo-logo" href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html" id="logo">
+        <div class="navbar-brand">HooPoo</div>
+        </a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li>
+              <a href="http://www.google.com"> About HooPoo</a>
+              </li>
+              <li>
+              <a href="http://www.google.com"> Contact Us</a>
+              </li>
+          </ul>
+
+        </div>
+
+      </nav>
+      </div>
+      </div>
+    </div>
+
+
+    <h2>Rate Bathroom</h2>
+
+
+
+
+<button onclick="getLocation()">Current Location</button>
+
+<p id="rating"></p>
+
+<script>
+var x = document.getElementById("rating");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
+
+
+
+  <form>
+  Building:<br>
+  <input type="text" name="building">
+  <br>
+  </form>
+  
+
+
+
+
+
+
+
+
+</body>
+
+ </html>
