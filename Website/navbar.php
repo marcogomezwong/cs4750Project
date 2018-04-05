@@ -11,7 +11,7 @@ session_start();
  +
  +//Displays the link for a logged-out user
   $text1 = "Login";
-  $link1 = "http://localhost:8080/StoryShare_Servlet/LoginServlet";
+  $link1 = "http://localhost:8080/HooPoo_Servlet/LoginServlet";
  +
  +//Hides the profile link for a logged-out user
   $text = "";
@@ -22,9 +22,9 @@ session_start();
   if ($username != "") {
  +
  +    //Displays the link to the logout servlet for a logged-in user
-      $link1 = "http://localhost:8080/StoryShare_Servlet/LogoutServlet";
+      $link1 = "http://localhost:8080/HooPoo_Servlet/LogoutServlet";
       $text1 = "Logout";
- +
+<!--  +
  +    //Displays the link to the logged-in user's profile
       $link = "http://localhost/StoryShare/profile.php";
-      $text = "Welcome, $username";
+      $text = "Welcome, $username"; -->
