@@ -141,13 +141,17 @@ input[type=text]:focus {
                       }
                   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+                
+
                   var infoWindow = new google.maps.InfoWindow;
+
+
 
 
 
                   downloadUrl('http://plato.cs.virginia.edu/~wcc4ch/Project/getBathrooms.php', function(data) {
                   var xml = data.responseXML;
-                  var markers = xml.documentElement.getElementsByTagName("bathrooms");
+                  var markers = xml.documentElement.getElementsByTagName("bathroom");
                   Array.prototype.forEach.call(markers, function(markerElem) {
                   var id = markerElem.getAttribute('Bathroom_id');
                   var name = markerElem.getAttribute('building_id');
@@ -164,7 +168,7 @@ input[type=text]:focus {
                   infowincontent.appendChild(document.createElement('br'));
 
                   var text = document.createElement('text');
-                  text.textContent = address;
+                  text.textContent = type;
                   infowincontent.appendChild(text);
                   var icon = customLabel[type] || {};
                   var marker = new google.maps.Marker({
@@ -179,13 +183,13 @@ input[type=text]:focus {
                 });
               });
 
-                  }
+              }
 
 
                   function downloadUrl(url, callback) {
                   var request = window.ActiveXObject ?
                       new ActiveXObject('Microsoft.XMLHTTP') :
-                      new XMLHttpRequest;
+                      new XMLHttpRequest();
 
                   request.onreadystatechange = function() {
                     if (request.readyState == 4) {

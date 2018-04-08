@@ -10,6 +10,10 @@ if (mysqli_connect_errno()) {
 $sql = "SELECT * FROM Bathrooms";
 $result = mysqli_query($con, $sql);
 
+if (!$result) {
+  die('Invalid query: ' . mysql_error());
+}
+
 
 
 

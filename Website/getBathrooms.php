@@ -1,51 +1,47 @@
-<?
- header("Access-Control-Allow-Origin: *");
-require("./library.php");
+<?php
+header("Content-type: text/xml");
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
+
 
 // Start XML file, create parent node
 
-function parseToXML($htmlStr)
-{
-$xmlStr=str_replace('<','&lt;',$htmlStr);
-$xmlStr=str_replace('>','&gt;',$xmlStr);
-$xmlStr=str_replace('"','&quot;',$xmlStr);
-$xmlStr=str_replace("'",'&#39;',$xmlStr);
-$xmlStr=str_replace("&",'&amp;',$xmlStr);
-return $xmlStr;
+// function parseToXML($htmlStr)
+// {
+// $xmlStr=str_replace('<','&lt;',$htmlStr);
+// $xmlStr=str_replace('>','&gt;',$xmlStr);
+// $xmlStr=str_replace('"','&quot;',$xmlStr);
+// $xmlStr=str_replace("'",'&#39;',$xmlStr);
+// $xmlStr=str_replace("&",'&amp;',$xmlStr);
+// return $xmlStr;
+// }
+
+//header("Access-Control-Allow-Origin: *");
+require_once("./library.php");
+$con = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE);
+if (mysqli_connect_errno()) {
+  echo("Cannot connect to MySQL Server Error code: " .
+  mysqli_connect_error());
+  return null;
 }
+$sql = "SELECT * FROM Bathrooms";
+$result = mysqli_query($con, $sql);
 
-// Opens a connection to a MySQL server
-
-$connection=mysqli_connect ($SERVER, $USERNAME, $PASSWORD);
-if (!$connection) {  die('Not connected : ' . mysql_error());}
-
-// Set the active MySQL database
-
-$db_selected = mysqli_select_db($DATABASE, $connection);
-if (!$db_selected) {
-  die ('Can\'t use db : ' . mysql_error());
-}
-
-// Select all the rows in the markers table
-
-$query = "SELECT * FROM Bathrooms";
-$result = mysql_query($query);
 if (!$result) {
   die('Invalid query: ' . mysql_error());
 }
 
-//header("Content-type: text/xml");
 
 //start xml file, echo parent node
-
-echo "<?xml version='1.0' ?>";
-echo '<bathrooms>';
+ob_clean(); //Clean (erase) the output buffer
+echo '<?xml version="1.0"?>';
+echo '<markers>';
 $ind=0;
 
-while ($row = @mysql_fetch_assoc($result)){
+while ($row = mysqli_fetch_array($result)){
   // Add to XML document node
   echo '<bathroom ';
-  echo 'Bathroom_id="' . $row['Bathrooom_id'] . '" ';
+  echo 'Bathroom_id="' . $row['Bathroom_id'] . '" ';
   echo 'building_id="' . $row['building_id'] . '" ';
   echo 'floor="' . $row['floor'] . '" ';
   echo 'latitude="' . $row['latitude'] . '" ';
@@ -54,7 +50,7 @@ while ($row = @mysql_fetch_assoc($result)){
   echo '/>';
   $ind = $ind + 1;
 }
-
-echo '</bathrooms>;
+echo '</markers>';
+mysqli_close($con);
 
 ?>
