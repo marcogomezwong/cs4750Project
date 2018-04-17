@@ -125,8 +125,6 @@ input[type=text]:focus {
 
                   function myMap() {
 
-                    var rotundaTest = {lat: 38.0344642, lng:-78.5125328};
-
                       var mapOptions = {
                           center: new google.maps.LatLng(38.0344642, -78.5125328),
                           zoom: 15,
@@ -136,11 +134,7 @@ input[type=text]:focus {
 
                 
 
-                  var infoWindow = new google.maps.InfoWindow;
-
-
-
-
+                 // var infoWindow = new google.maps.InfoWindow;
 
                   downloadUrl('http://plato.cs.virginia.edu/~wcc4ch/Project/getBathrooms.php', function(data) {
                   var xml = data.responseXML;
@@ -154,15 +148,32 @@ input[type=text]:focus {
                       parseFloat(markerElem.getAttribute('latitude')),
                       parseFloat(markerElem.getAttribute('longitude')));
 
-                       var infowincontent = document.createElement('div');
-                  var strong = document.createElement('strong');
-                  strong.textContent = name
-                  infowincontent.appendChild(strong);
-                  infowincontent.appendChild(document.createElement('br'));
+                  //var infowincontent = document.createElement('div');
+                  //var strong = document.createElement('strong');
+                  //var review_link = '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/bathroomReviews.php?varname' + id + '=<?php echo $var_value ?>">Page2</a>'
+                  //strong.textContent = "Bathroom: " + name
+                  //infowincontent.appendChild(strong);
+                  //infowincontent.appendChild(document.createElement('br'));
 
-                  var text = document.createElement('text');
-                  text.textContent = type;
-                  infowincontent.appendChild(text);
+                 var contentString = '<div id="content">'+
+                   '<div id="siteNotice">'+
+            '</div>'+
+            '<h1 id="firstHeading" class="firstHeading">Bathroom: ' + id + '</h1>'+
+            '<div id="bodyContent">'+
+            '<p><a href="http://plato.cs.virginia.edu/~wcc4ch/Project/bathroomReviews.php?bathroom_id=' + id + '">Click Here To See Reviews</a>'
+            '</p>'+
+            '</div>'+
+            '</div>';
+
+
+
+                  var infoWindow = new google.maps.InfoWindow({
+                    content: contentString
+                  });
+
+                  //var text = document.createElement('text');
+                  //text.textContent = "Click here to see reviews:  " + review_link;
+                  //infowincontent.appendChild(text);
                   var icon = customLabel[type] || {};
                   var marker = new google.maps.Marker({
                     map: map,
@@ -170,7 +181,7 @@ input[type=text]:focus {
                     label: icon.label
                   });
                   marker.addListener('click', function() {
-                    infoWindow.setContent(infowincontent);
+                    //infoWindow.setContent(infowincontent);
                     infoWindow.open(map, marker);
                   });
                 });
