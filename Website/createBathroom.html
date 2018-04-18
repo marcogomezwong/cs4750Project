@@ -31,8 +31,11 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
+               <li>
+              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html"> Submit New Restroom</a>
+              </li>
               <li>
-              <a href="http://www.google.com"> About HooPoo</a>
+              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.html"> About HooPoo</a>
               </li>
               <li>
               <a href="http://www.google.com"> Contact Us</a>
@@ -82,6 +85,12 @@ function showPosition(position) {
 <div class="col-sm-12">
 <div class="new-bathroom-form-container">
   <h1 style="text-align:center;" > Submit new bathroom </h1>
+
+  <script>
+
+  var bathroom_id = sessionStorage.getItem('bathroom_id');
+
+  </script>
 
 
 <form class="new-bathroom-form simple_form form-verticle" action="insertRating.php" method="post">

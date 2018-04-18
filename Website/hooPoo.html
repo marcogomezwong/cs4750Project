@@ -148,6 +148,8 @@ input[type=text]:focus {
                       parseFloat(markerElem.getAttribute('latitude')),
                       parseFloat(markerElem.getAttribute('longitude')));
 
+                  sessionStorage.setItem('bathroom_id', id);
+
                   //var infowincontent = document.createElement('div');
                   //var strong = document.createElement('strong');
                   //var review_link = '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/bathroomReviews.php?varname' + id + '=<?php echo $var_value ?>">Page2</a>'
@@ -160,7 +162,8 @@ input[type=text]:focus {
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading">Bathroom: ' + id + '</h1>'+
             '<div id="bodyContent">'+
-            '<p><a href="http://plato.cs.virginia.edu/~wcc4ch/Project/bathroomReviews.php?bathroom_id=' + id + '">Click Here To See Reviews</a>'
+            '<p><a href="http://plato.cs.virginia.edu/~wcc4ch/Project/bathroomReviews.php?bathroom_id=' + id + '">Click Here To See Reviews</a>' +
+            '<p><a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.html">Click Here To Reivew Bathroom</a>' +
             '</p>'+
             '</div>'+
             '</div>';
