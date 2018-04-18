@@ -8,9 +8,9 @@
  }
  
 
- $sql = "INSERT INTO  (floor, longitude, latitude)
+ $sql = "INSERT INTO Create_review (bathroom_id, rating, comment)
  VALUES
- ('$_POST[floor]','$_POST[longitude]','$_POST[latitude]')";
+ ('$_POST[bathroom_id]','$_POST[rating]','$_POST[comment]')";
 
  if (!mysqli_query($con,$sql))
  {
