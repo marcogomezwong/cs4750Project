@@ -10,19 +10,19 @@ mysqli_connect_error());
  // Form the SQL query (a SELECT query)
  //$a = mysql_query("SELECT * FROM `table` WHERE `id` = '1'");
 
- $id = intval($_GET['bathroom_id']);
+ $name_arg = intval($_GET['search']);
 
- $sql="SELECT * FROM Bathrooms WHERE Bathroom_id = $id";
+echo name_arg;
+$name_arg = "Rice Hall";
+ $sql="SELECT * FROM Building WHERE name = $name_arg";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
  while($row = mysqli_fetch_array($result)) {
- echo "Floor: " . $row['floor'];
+ echo "ID: " . $row['building_id'];
  echo "<br>";
- echo "Overall Rating: " . $row['overall_rating'];
+ echo "Name: " . $row['name'];
  echo "<br>";
- echo "Longitude: " . $row['longitude'];
- echo "<br>";
- echo "Latitude: " . $row['latitude'];
+ echo "num_bathrooms: " . $row['num_bathrooms'];
  echo "<br>";
  }
  mysqli_close($con);
