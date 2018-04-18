@@ -10,11 +10,11 @@ mysqli_connect_error());
  // Form the SQL query (a SELECT query)
  //$a = mysql_query("SELECT * FROM `table` WHERE `id` = '1'");
 
- $name_arg = intval($_GET['search']);
+$name_arg = intval($_GET['search']);
 
 echo "arg " . $name_arg;
 echo "<br>";
-var $id;
+$id = 0;
 
 $name_arg = "Rice Hall";
  $sql="SELECT * FROM Building WHERE name = $name_arg;";
