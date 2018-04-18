@@ -30,16 +30,16 @@ $name_arg = "Rice Hall";
    echo "<br>";
  }
 
- $sql = "SELECT * FROM Bathrooms WHERE building_id = $id;";
-  $result = mysqli_query($con,$sql);
-  while ($row = mysqli_fetch_array($result)) {
-    echo "ID: " . $row['Bathroom_id'];
+ $sql2 = "SELECT * FROM Bathrooms WHERE building_id = $id;";
+  $result2 = mysqli_query($con,$sql2);
+  while ($row2 = mysqli_fetch_array($result2)) {
+    echo "ID: " . $row2['Bathroom_id'];
     echo "<br>";
-    echo "building_id " . $row['building_id'];
+    echo "building_id " . $row2['building_id'];
     echo "<br>";
-    echo "floor " . $row['floor'];
+    echo "floor " . $row2['floor'];
     echo "<br>";
-    echo "overall_rating " . $row['overall_rating'];
+    echo "overall_rating " . $row2['overall_rating'];
     echo "<br>";
 
   }
