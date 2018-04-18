@@ -12,7 +12,9 @@ mysqli_connect_error());
 
  $name_arg = intval($_GET['search']);
 
-echo name_arg;
+echo "arg " . name_arg;
+echo "<br>";
+
 $name_arg = "Rice Hall";
  $sql="SELECT * FROM Building WHERE name = $name_arg";
  $result = mysqli_query($con,$sql);
