@@ -7,7 +7,7 @@ if (mysqli_connect_errno()) {
 	mysqli_connect_error());
 	return null;
 }
-$sql = "SELECT * FROM Bathrooms";
+$sql = "SELECT * FROM Bathrooms;";
 $result = mysqli_query($con, $sql);
 
 if (!$result) {
@@ -17,7 +17,7 @@ if (!$result) {
 
 
 
-//echo "<?xml version='1.0' 
+//echo "<?xml version='1.0'
 echo '<bathrooms>';
 $ind=0;
 while($row = mysqli_fetch_array($result)) {
