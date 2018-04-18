@@ -12,20 +12,39 @@ mysqli_connect_error());
 
  $name_arg = intval($_GET['search']);
 
-echo "arg " . name_arg;
+echo "arg " . $name_arg;
 echo "<br>";
+var $id;
 
 $name_arg = "Rice Hall";
- $sql="SELECT * FROM Building WHERE name = $name_arg";
+ $sql="SELECT * FROM Building WHERE name = $name_arg;";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
  while($row = mysqli_fetch_array($result)) {
- echo "ID: " . $row['building_id'];
- echo "<br>";
- echo "Name: " . $row['name'];
- echo "<br>";
- echo "num_bathrooms: " . $row['num_bathrooms'];
- echo "<br>";
+   echo "ID: " . $row['building_id'];
+   $id = $row['building_id'];
+   echo "<br>";
+   echo "Name: " . $row['name'];
+   echo "<br>";
+   echo "num_bathrooms: " . $row['num_bathrooms'];
+   echo "<br>";
  }
+
+ $sql = "SELECT * FROM Bathrooms WHERE building_id = $id;";
+  $result = mysqli_query($con,$sql);
+  while ($row = mysqli_fetch_array($result)) {
+    echo "ID: " . $row['Bathroom_id'];
+    echo "<br>";
+    echo "building_id " . $row['building_id'];
+    echo "<br>";
+    echo "floor " . $row['floor'];
+    echo "<br>";
+    echo "overall_rating " . $row['overall_rating'];
+    echo "<br>";
+
+  }
+
  mysqli_close($con);
+
+
 ?>
