@@ -47,72 +47,18 @@
     </div>
 
 
-   
-
-
-
-
-<!--
-
-<button onclick="getLocation()">Current Location</button>
-
-<p id="rating"></p>
-
-<script>
-var x = document.getElementById("rating");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
--->
 
 
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
 <div class="new-bathroom-form-container">
-  <h1 style="text-align:center;" > Review Bathroom </h1>
+  <h1 style="text-align:center;" > Rate Bathroom </h1>
 
 
 <form class="new-bathroom-form simple_form form-verticle" action="insertRating.php" method="post">
 
-<div class="form-group">
-<label>
-  Floor
-</label>
-<input class="form-control" type="number" name="floor">
-</div>
 
-<div class="form-group">
-<label>
-Building Name
-</label>
-<input class="form-control" type="text" name="building_id">
-</div>
-
-<div class="form-group">
-<label>
-Latitude
-</label>
-<input class="form-control"  type="text" name="latitude">
-</div>
-
-<div class="form-group">
-<label>
-Longitude
-</label>
- <input class="form-control" type="text" name="longitude">
-</div>
 
 <div class="form-group slidecontainer">
 <label>
@@ -140,6 +86,15 @@ slider.oninput = function() {
 </script>
 
 
+<div class="form-group text optional">
+<label>
+Comment
+</label>
+<textarea class="text optional form-control span6" placeholder="(e.g. : Very crowded...only two stalls)" name="comment" id="restroom_comment"></textarea>
+</div>
+
+
+
 <input type="Submit" class="linkbutton">
 
 </form> 
@@ -152,12 +107,6 @@ slider.oninput = function() {
 
 </div>
   
-
-
-
-
-
-
 
 
 </body>
