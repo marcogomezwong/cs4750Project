@@ -6,7 +6,7 @@ if (mysqli_connect_errno()) {
 	mysqli_connect_error());
 	return null;
 }
-$sql = "SELECT * FROM Bathrooms;"
+$sql = "SELECT * FROM Bathrooms;";
 $result = mysqli_query($con, $sql);
 while($row = mysqli_fetch_array($result)) {
 	echo $row['Bathroom_id'];
@@ -18,3 +18,5 @@ while($row = mysqli_fetch_array($result)) {
 }
 mysqli_close($con);
 ?>
+
+
