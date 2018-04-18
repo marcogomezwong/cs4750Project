@@ -8,7 +8,7 @@
  }
  
 
- $sql = "INSERT INTO Bathrooms (floor, longitude, latitude)
+ $sql = "INSERT INTO  (floor, longitude, latitude)
  VALUES
  ('$_POST[floor]','$_POST[longitude]','$_POST[latitude]')";
 
