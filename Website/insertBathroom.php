@@ -14,7 +14,7 @@ $name = -1;
    $name = $result['building_id'];
  }
  if ($name == -1) {
-    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$POST[building_name]', 1);"
+    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$POST[building_name]', 1);";
  }
 
  $sql = "INSERT INTO Bathrooms (overall_rating, rating_count, floor, longitude, latitude)
