@@ -6,13 +6,16 @@
  {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
-
- $SQL_NAME_TO_ID = "SELECT * Building WHERE  name like 'Rice%;'"
- if (!mysqli_query($con,$SQL_NAME_TO_ID))
- {
-  die('Error: ' . mysqli_error($con));
+$name = -1;
+ $SQL_NAME_TO_ID = "SELECT * Building WHERE name like 'Rice%;'"
+ $result = mysqli_query($con, $SQL_NAME_TO_ID);
+ // Print the data from the table row by row
+ while($row = mysqli_fetch_array($result)) {
+   $name = $result['building_id'];
  }
- echo $SQL_NAME_TO_ID;
+ if ($name == -1) {
+    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$POST[building_name]', 1);"
+ }
 
  $sql = "INSERT INTO Bathrooms (overall_rating, rating_count, floor, longitude, latitude)
  VALUES

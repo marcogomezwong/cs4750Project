@@ -50,7 +50,7 @@
     </div>
 
 
-   
+
 
 
 
@@ -67,13 +67,13 @@ var x = document.getElementById("rating");
 function getLocation() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
+    } else {
         x.innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
 function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
 }
 </script>
@@ -86,7 +86,7 @@ function showPosition(position) {
 <div class="new-bathroom-form-container">
   <h1 style="text-align:center;" > Submit new bathroom </h1>
 
- 
+
 
 
 <form class="new-bathroom-form simple_form form-verticle" action="insertBathroom.php" method="post">
@@ -102,7 +102,7 @@ function showPosition(position) {
 <label>
 Building Name
 </label>
-<input class="form-control" type="text" name="building_id">
+<input class="form-control" type="text" name="building_name">
 </div>
 
 <div class="form-group">
@@ -121,7 +121,7 @@ Longitude
 
 <div class="form-group slidecontainer">
 <label>
-Rating: (0-5) 
+Rating: (0-5)
 </label>
 <input class="form-control" type="range" name="rating" min="0" max="5" class="" id="myRange" list="tickmarks">
 <datalist id="tickmarks">
@@ -147,7 +147,7 @@ slider.oninput = function() {
 
 <input type="Submit" class="linkbutton">
 
-</form> 
+</form>
 
 </div>
 </div>
@@ -156,7 +156,7 @@ slider.oninput = function() {
 
 
 </div>
-  
+
 
 
 
