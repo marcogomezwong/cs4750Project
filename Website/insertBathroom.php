@@ -8,7 +8,7 @@
  }
 
  $SQL_NAME_TO_ID = "SELECT * Building WHERE  name like 'Rice%;'"
- if (!mysqli_query($con,$sql))
+ if (!mysqli_query($con,$SQL_NAME_TO_ID))
  {
   die('Error: ' . mysqli_error($con));
  }
