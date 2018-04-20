@@ -143,7 +143,7 @@ input[type=text]:focus {
                   var id = markerElem.getAttribute('Bathroom_id');
                   var name = markerElem.getAttribute('building_id');
                   var building = markerElem.getAttribute('building_name');
-                  var address = markerElem.getAttribute('overall_rating');
+                  var rating = markerElem.getAttribute('overall_rating');
                   var type = markerElem.getAttribute('floor');
                   var point = new google.maps.LatLng(
                       parseFloat(markerElem.getAttribute('latitude')),
@@ -163,7 +163,7 @@ input[type=text]:focus {
             '</div>'+
             '<h1 id="firstHeading" class="firstHeading" style="font-size: 22px;"> ' + building + ', Floor: ' + type +  '</h1>'+
             '<div class="reivewLinks" id="bodyContent">'+
-            '<p> Average Rating: ' + 
+            '<p> Average Rating: ' + rating +
             '<form action="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' + id + '">' +
             '<input type="submit" value="See Reviews" />' +
             '</form>' +
