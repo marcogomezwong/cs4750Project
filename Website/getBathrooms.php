@@ -51,7 +51,7 @@ while ($row = mysqli_fetch_array($result)){
   echo 'floor="' . $row['floor'] . '" ';
   echo 'latitude="' . $row['latitude'] . '" ';
   echo 'longitude="' . $row['longitude'] . '" ';
-  //echo 'overall_rating="' . $row['overall_rating'] . '" ';
+  echo 'overall_rating="' . $row['overall_rating'] . '" ';
   echo '/>';
   $ind = $ind + 1;
 }
