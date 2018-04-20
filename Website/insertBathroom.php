@@ -7,7 +7,7 @@
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
 $name = -1;
- $SQL_NAME_TO_ID = "SELECT * Building WHERE name like 'Rice%;'"
+ $SQL_NAME_TO_ID = "SELECT * Building WHERE name like 'Rice%;'";
  $result = mysqli_query($con, $SQL_NAME_TO_ID);
  // Print the data from the table row by row
  while($row = mysqli_fetch_array($result)) {
