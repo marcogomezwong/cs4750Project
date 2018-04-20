@@ -15,7 +15,11 @@
  if (!mysqli_query($con,$sql))
  {
  	die('Error: ' . mysqli_error($con));
+ }else{
+	header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
  }
+
+
 
  mysqli_close($con);
 

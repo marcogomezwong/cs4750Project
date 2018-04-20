@@ -17,6 +17,7 @@
  	die('Error: ' . mysqli_error($con));
  }
 
+
  mysqli_close($con);
 
  ?>

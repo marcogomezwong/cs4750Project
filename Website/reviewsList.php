@@ -53,6 +53,7 @@
 
     <script>
     var bathroom_id =  sessionStorage.getItem('bathroom_id');
+    sessionStorage.clear();
     </script>
 
 
@@ -68,16 +69,50 @@ mysqli_connect_error());
  // Form the SQL query (a SELECT query)
  //$a = mysql_query("SELECT * FROM `table` WHERE `id` = '1'");
 
+
+?>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<div class="new-bathroom-form-container">
+
+<h1>Reviews</h1>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Rating</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+
+<?php
+
+
  $id = intval($_GET['bathroom_id']);
 
  $sql="SELECT * FROM Create_review WHERE Bathroom_id = $id";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
  while($row = mysqli_fetch_array($result)) {
- echo "Rating: " . $row['rating'];
- echo "<br>";
- echo "Comment: " . $row['comment'];
- echo "<br>";
+  echo ' <tr>
+    <td>' . $row['rating'] . ' </td>
+   <td>' . $row['comment'] . ' </td>
+   </tr>';
  }
  mysqli_close($con);
-?>
+
+ ?>
+
+ </tbody>
+ </table>
+
+</div>
+</div>
+</div>
+</div>
+
+
+ </body>
+  </html>

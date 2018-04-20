@@ -24,7 +24,11 @@ if (mysqli_connect_errno()) {
   mysqli_connect_error());
   return null;
 }
-$sql = "SELECT * FROM Bathrooms";
+
+//SELECT A.*, B.name FROM Bathrooms as A JOIN Building as B ON A.building_id = B.building_id;
+
+
+$sql = "SELECT A.*, B.name FROM Bathrooms as A JOIN Building as B ON A.building_id = B.building_id";
 $result = mysqli_query($con, $sql);
 
 if (!$result) {
@@ -43,6 +47,7 @@ while ($row = mysqli_fetch_array($result)){
   echo '<bathroom ';
   echo 'Bathroom_id="' . $row['Bathroom_id'] . '" ';
   echo 'building_id="' . $row['building_id'] . '" ';
+  echo 'building_name="' . $row['name'] . '" ';
   echo 'floor="' . $row['floor'] . '" ';
   echo 'latitude="' . $row['latitude'] . '" ';
   echo 'longitude="' . $row['longitude'] . '" ';

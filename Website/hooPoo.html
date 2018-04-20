@@ -142,13 +142,14 @@ input[type=text]:focus {
                   Array.prototype.forEach.call(markers, function(markerElem) {
                   var id = markerElem.getAttribute('Bathroom_id');
                   var name = markerElem.getAttribute('building_id');
+                  var building = markerElem.getAttribute('building_name');
                   //var address = markerElem.getAttribute('overall_rating');
                   var type = markerElem.getAttribute('floor');
                   var point = new google.maps.LatLng(
                       parseFloat(markerElem.getAttribute('latitude')),
                       parseFloat(markerElem.getAttribute('longitude')));
 
-                  sessionStorage.setItem('bathroom_id', id);
+                 
 
                   //var infowincontent = document.createElement('div');
                   //var strong = document.createElement('strong');
@@ -160,11 +161,14 @@ input[type=text]:focus {
                  var contentString = '<div id="content">'+
                    '<div id="siteNotice">'+
             '</div>'+
-            '<h1 id="firstHeading" class="firstHeading">Bathroom: ' + id + '</h1>'+
-            '<div id="bodyContent">'+
-            '<p><a href="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' + id + '">Click Here To See Reviews</a>' +
-            '<p><a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.html">Click Here To Review Bathroom</a>' +
-            '</p>'+
+            '<h1 id="firstHeading" class="firstHeading" style="font-size: 22px;"> ' + building + ' Floor: ' + type +  '</h1>'+
+            '<div class="reivewLinks" id="bodyContent">'+
+            '<form action="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' + id + '">' +
+            '<input type="submit" value="See Reviews" />' +
+            '</form>' +
+            '<form action="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.html">' +
+            '<input type="submit" value="See Reviews" />' +
+            '</form>' +
             '</div>'+
             '</div>';
 
@@ -185,6 +189,7 @@ input[type=text]:focus {
                   });
                   marker.addListener('click', function() {
                     //infoWindow.setContent(infowincontent);
+                    sessionStorage.setItem('bathroom_id', id);
                     infoWindow.open(map, marker);
                   });
                 });
