@@ -15,9 +15,11 @@ $name = -1;
  }
  if ($name == -1) {
     $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$POST[building_name]', 1);";
-    $SQL_count = "SELECT count(*) as cnt FROM Bathrooms;";
+    $SQL_count = "SELECT count(*) as cnt FROM Building;";
     $result_count = mysqli_query($con, $SQL_count);
-    $name = $result_count['cnt'];
+    while($row_count = mysqli_fetch_array($result_count)) {
+        $name = $result_count['cnt'];
+    }
  }
 
  $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude)
