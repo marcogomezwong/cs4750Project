@@ -6,13 +6,14 @@
  {
  echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
-
+$name = "";
  $SQL_NAME_TO_ID = "SELECT * Building WHERE  name like 'Rice%;'"
- if (!mysqli_query($con,$SQL_NAME_TO_ID))
- {
-  die('Error: ' . mysqli_error($con));
+ $result = mysqli_query($con, $SQL_NAME_TO_ID);
+ // Print the data from the table row by row
+ while($row = mysqli_fetch_array($result)) {
+   $name = $result['name'];
  }
- echo $SQL_NAME_TO_ID;
+ echo $name;
 
  $sql = "INSERT INTO Bathrooms (overall_rating, rating_count, floor, longitude, latitude)
  VALUES
