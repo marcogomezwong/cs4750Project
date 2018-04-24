@@ -13,7 +13,6 @@ $count = 0;
 
  $sql = "INSERT INTO Create_review (bathroom_id, rating, comment)
  VALUES
-
  ('$_POST[bathroom_id]','$_POST[rating]',str_replace("''","''''",'$_POST[comment]'));";
 
 
