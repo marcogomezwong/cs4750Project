@@ -29,11 +29,13 @@ $id = -1;
      die('Error: ' . mysqli_error($con));
     }
 
-    // $SQL_count = "SELECT count(*) as cnt FROM Building;";
-    // $result_count = mysqli_query($con, $SQL_count);
-    // while($row_count = mysqli_fetch_array($result_count)) {
-    //     $id = $result_count['cnt'];
-    // }
+    $SQL_get_id = "SELECT * FROM Building WHERE name like '$_POST[building_name]';";
+    $result_count = mysqli_query($con, $SQL_count);
+    while($row_count = mysqli_fetch_array($result_count)) {
+        $id = $row_count['building_id'];
+    }
+
+    echo "id: " + $id + "<br>";
  }
  //
  // $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude)
