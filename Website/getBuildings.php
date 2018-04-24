@@ -16,7 +16,6 @@ echo "arg " . $name_arg;
 echo "<br>";
 $id = 0;
 
-$name_arg = "Rice Hall";
  $sql="SELECT * FROM Building WHERE name like '$name_arg';";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
@@ -29,7 +28,7 @@ $name_arg = "Rice Hall";
    echo "num_bathrooms: " . $row['num_bathrooms'];
    echo "<br>";
    echo "-----";
-   echo "<br>"
+   echo "<br>";
  }
 echo "---SQL2--";
 echo "<br>";
