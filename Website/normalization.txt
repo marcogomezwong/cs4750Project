@@ -1,0 +1,89 @@
+FD= [
+bathroom_id —> bathroom_id, building_id, floor, overall_rating
+floor —> floor 
+overall_rating ->overall rating
+account_id —> account_id, first_name, last_name
+first_name —> first_name
+last_name —> last_name
+custodian_id —> custodian_id, building_id
+account_id, custodian_id —> account_id, custodian_id, last_name, first_name, building_id
+building_id —> building_id, name, numBathrooms, gps_location
+name —> name, num_bathrooms, gps_location
+numBathrooms —> numBathrooms
+gps_location —> name, num_bathrooms, gps_location
+bathroom_goer_id —> bathroom_goer_id, gender, account_id, first_name, last_name
+gender —> gender
+bathroom_goer_id, bathroom_id —>   bathroom_goer_id, bathroom_id, rating, comment, building_id, name, numBathrooms, gps_location, custodian_id, building_id, bathroom_goer_id
+Bathroom_id —> building_id, name, numBathrooms, gps_location, custodian_id, building_id, bathroom_goer_id
+]
+
+Fc== {
+bathroom_id —> bathroom_id, building_id, floor, overall_rating
+floor —> floor 
+overall_rating ->overall rating
+account_id —> account_id, first_name, last_name
+first_name —> first_name
+last_name —> last_name
+custodian_id —> custodian_id, building_id
+account_id, custodian_id —> account_id, custodian_id, last_name, first_name, building_id
+building_id —> building_id, name, numBathrooms, gps_location
+name —> name, num_bathrooms, gps_location
+numBathrooms —> numBathrooms
+gps_location —> name, num_bathrooms, gps_location
+bathroom_goer_id —> bathroom_goer_id, gender, account_id, first_name, last_name
+gender —> gender
+bathroom_goer_id, bathroom_id —>   bathroom_goer_id, bathroom_id, rating, comment, building_id, name, numBathrooms, gps_location, custodian_id, building_id, bathroom_goer_id
+Bathroom_id —> building_id, name, numBathrooms, gps_location, custodian_id, building_id, bathroom_goer_id
+} ==>
+{
+account_id —> first_name, last_name
+custodian_id —> bathroom_id
+account_id, custodian_id —> last_name, first_name, building_id
+building_id —> name, numBathrooms, gps_location
+bathroom_goer_id —> gender, account_id, first_name, last_name
+bathroom_goer_id, bathroom_id —>   rating, comment
+bathroom_id —> building_id, floor, rating, name, numBathrooms, gps_location, custodian_id, bathroom_goer_id, 
+}
+
+account_id, first_name(TRIVIAL), last_name(TRIVIAL), custodian_id, bathroom_id, building_id, name(TRIVIAL), numBathrooms(TRIVIAL), gps_location(TRIVIAL), bathroom_goer_id,  rating(TRIVIAL), comment(TRIVIAL), floor(TRIVIAL), rating(TRIVIAL)
+
+BREAK ON account_id
+account_id —> account_id, first_name, last_name
+RHS: ACCOUNTS(account_id, first_name, last_name)
+LHS: account_id(DONE), custodian_id, bathroom_id, building_id, name(TRIVIAL), numBathrooms(TRIVIAL), gps_location(TRIVIAL), bathroom_goer_id,  rating(TRIVIAL), comment(TRIVIAL), floor(TRIVIAL), rating(TRIVIAL)
+
+BREAK ON custodian_ID
+custodian_id —> custodian_id, bathroom_id
+RHS: SUPPLIES(custodian_id, bathroom_id)
+LHS: account_id(DONE), custodian_id(DONE), bathroom_id, building_id, name(TRIVIAL), numBathrooms(TRIVIAL), gps_location(TRIVIAL), bathroom_goer_id,  rating(TRIVIAL), comment(TRIVIAL), floor(TRIVIAL), rating(TRIVIAL)
+
+BREAK ON bathroom_id
+bathroom_id —> building_id, floor, rating, name, numBathrooms, gps_location, custodian_id, building_id, bathroom_goer_id
+RHS: BATHROOM(bathroom_id, building, floor, overall_rating)
+LHS: account_id(DONE), custodian_id(DONE), bathroom_id, building_id, name(TRIVIAL), numBathrooms(TRIVIAL), gps_location(TRIVIAL), bathroom_goer_id,  rating(TRIVIAL), comment(TRIVIAL), rating(TRIVIAL)
+
+BREAK ON building_id
+building_id —> building_id, name, numBathrooms, gps_location
+RHS: BUILDING(building_id, name, numBathrooms, gps_location)
+LHS: account_id(DONE), custodian_id(DONE), bathroom_id, building_id(DONE), name(TRIVIAL), bathroom_goer_id,  rating(TRIVIAL), comment(TRIVIAL), floor(TRIVIAL)
+
+BREAK ON bathroom_goer_id
+bathroom_goer_id —> bathroom_goer_id, gender, account_id, first_name, last_name
+RHS: BATHROOM_GOER(bathroom_goer_id, gender)
+LHS: 
+
+BCNF Tables:
+ACCOUNTS(account_id, first_name, last_name)
+SUPPLIES(custodian_id, bathroom_id
+BATHROOM(bathroom_id, building, floor, overall_rating)
+BUILDING(building_id, name, numBathrooms, gps_location)
+BATHROOM_GOER(bathroom_goer_id, gender)
+
+NON BCNF Tables but still 3NF
+Custodians(account_id, custodian_id, last_name, first_name, building_id) — from Fc (account_id, custodian_id —> last_name, first_name, building_id)
+Create_review(bathroom_goer_id, bathroom_id, rating, comment) — from Fc (bathroom_goer_id, bathroom_id —>   rating, comment)
+Located_in(bathroom_id, building_id) — from Fc (bathroom_id —> building_id)
+Reports(bathroom_id, bathroom_goer_id) — from Fc (bathroom_id —> bathroom_goer_id)
+Administrator(account_id, custodian_id) — from Fc (account_id —> custodian_id)
+
+
