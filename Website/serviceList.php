@@ -102,7 +102,9 @@ mysqli_connect_error());
     <td>' . $row['Bathroom_id'] . ' </td>
    <td>' . $row['building_id'] . ' </td>
    <td>' . $row['floor'] . ' </td>
-   <td>' . $row['service_needed'] . ' </td>
+   <td>
+            <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/flagService.php?bathroom_id=' . $row['Bathroom_id'] . ' " class="btn btn-info" role="button">Service Done</a> 
+            </td>
    </tr>';
  }
  mysqli_close($con);
