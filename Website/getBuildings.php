@@ -81,8 +81,11 @@ mysqli_connect_error());
   <table class="data-table">
     <thead>
       <tr>
-        <th>Rating</th>
-        <th>Comment</th>
+        <th>Building</th>
+        <th>Floor</th>
+        <th>Avg. Rating </th>
+        <th>See Reviews List </th>
+        <th>Rate Bathroom </th>
       </tr>
     </thead>
     <tbody>
@@ -100,8 +103,11 @@ mysqli_connect_error());
     <td>' . $row['name'] . ' </td>
     <td>' . $row['floor'] . ' </td>
     <td>' . $row['overall_rating'] . ' </td>
-    <td>' . $row['floor'] . ' </td>
-   </tr>';
+    <td>
+             <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/serviceDone.php?bathroom_id=' . $row['Bathroom_id'] . ' " class="btn btn-info" role="button">Service Done</a>
+             </td>
+    </tr>
+    </tr>';
  }
  mysqli_close($con);
 
