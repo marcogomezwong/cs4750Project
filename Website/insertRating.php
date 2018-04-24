@@ -22,14 +22,6 @@ $count = 0;
 } else {
 	 header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
 }
- $SQL_select = "SELECT * FROM Bathrooms WHERE Bathroom_id = $_POST['bathroom_id'];";
- $result = mysqli_query($con,$SQL_select);
- while($row = mysqli_fetch_array($result)) {
-   $old_rating = $row['overall_rating'];
-   $count = $row['rating_count'];
-}
-
-
 
  mysqli_close($con);
 
