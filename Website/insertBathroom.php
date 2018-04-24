@@ -34,19 +34,18 @@ $id = -1;
     while($row_count = mysqli_fetch_array($result_count)) {
         $id = $row_count['building_id'];
     }
-    echo "id: " + $id + "<br>";
  }
- 
- // $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude)
- // VALUES
- // ($name, '$_POST[rating]', 1, '$_POST[floor]','$_POST[longitude]','$_POST[latitude]');";
- //
- // if (!mysqli_query($con,$sql))
- // {
- // 	die('Error: ' . mysqli_error($con));
- // }else{
-	// header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
- // }
+
+ $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude)
+ VALUES
+    ($id, '$_POST[rating]', 1, '$_POST[floor]','$_POST[longitude]','$_POST[latitude]');";
+
+ if (!mysqli_query($con,$sql))
+ {
+ 	die('Error: ' . mysqli_error($con));
+ }else{
+	  header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
+ }
 
 
  mysqli_close($con);
