@@ -30,14 +30,13 @@ $id = -1;
     }
 
     $SQL_get_id = "SELECT * FROM Building WHERE name like '$_POST[building_name]';";
-    $result_count = mysqli_query($con, $SQL_count);
+    $result_count = mysqli_query($con, $SQL_get_id);
     while($row_count = mysqli_fetch_array($result_count)) {
         $id = $row_count['building_id'];
     }
-
     echo "id: " + $id + "<br>";
  }
- //
+ 
  // $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude)
  // VALUES
  // ($name, '$_POST[rating]', 1, '$_POST[floor]','$_POST[longitude]','$_POST[latitude]');";
