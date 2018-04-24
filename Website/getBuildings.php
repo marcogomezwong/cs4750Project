@@ -17,7 +17,7 @@ echo "<br>";
 $id = 0;
 
 $name_arg = "Rice Hall";
- $sql="SELECT * FROM Building WHERE name = $name_arg;";
+ $sql="SELECT * FROM Building WHERE name like '$name_arg';";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
  while($row = mysqli_fetch_array($result)) {
@@ -28,8 +28,11 @@ $name_arg = "Rice Hall";
    echo "<br>";
    echo "num_bathrooms: " . $row['num_bathrooms'];
    echo "<br>";
+   echo "-----";
+   echo "<br>"
  }
-
+echo "---SQL2--";
+echo "<br>";
  $sql2 = "SELECT * FROM Bathrooms WHERE building_id = $id;";
   $result2 = mysqli_query($con,$sql2);
   while ($row2 = mysqli_fetch_array($result2)) {
