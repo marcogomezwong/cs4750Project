@@ -16,7 +16,7 @@ echo "arg " . $name_arg;
 echo "<br>";
 $id = 0;
 
- $sql="SELECT * FROM Building WHERE name like '$name_arg';";
+ $sql="SELECT A.* FROM Bathrooms as A JOIN Building As B ON A.building_id = B.building_id WHERE name like '%$name_arg%';";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
  while($row = mysqli_fetch_array($result)) {
@@ -27,24 +27,11 @@ $id = 0;
    echo "<br>";
    echo "num_bathrooms: " . $row['num_bathrooms'];
    echo "<br>";
+   echo "br_id: " . $row['bathroom_id'];
    echo "-----";
    echo "<br>";
  }
-echo "---SQL2--";
-echo "<br>";
- $sql2 = "SELECT * FROM Bathrooms WHERE building_id = $id;";
-  $result2 = mysqli_query($con,$sql2);
-  while ($row2 = mysqli_fetch_array($result2)) {
-    echo "ID: " . $row2['Bathroom_id'];
-    echo "<br>";
-    echo "building_id " . $row2['building_id'];
-    echo "<br>";
-    echo "floor " . $row2['floor'];
-    echo "<br>";
-    echo "overall_rating " . $row2['overall_rating'];
-    echo "<br>";
 
-  }
 
  mysqli_close($con);
 
