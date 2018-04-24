@@ -23,7 +23,7 @@ $id = -1;
 
 
  if ($id == -1) {
-    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ($_POST[building_name], 1);";
+    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$_POST[building_name]', 1);";
     if (!mysqli_query($con,$SQL_INSERT))
     {
      die('Error: ' . mysqli_error($con));
