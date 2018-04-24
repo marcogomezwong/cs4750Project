@@ -29,7 +29,6 @@ $rating_count = 0;
 
 $update_val = ($old_rating * $rating_count + $new_rating) / ($rating_count + 1);
 
-
 $sql_update = "UPDATE Bathrooms SET overall_rating = $update_val WHERE Bathroom_id = $_POST[bathroom_id];";
 if (!mysqli_query($con,$sql))
 {
