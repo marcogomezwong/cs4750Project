@@ -32,10 +32,10 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
               <li>
-              <a href="http://www.google.com"> About HooPoo</a>
+              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html"> Submit New Restroom</a>
               </li>
               <li>
-              <a href="http://www.google.com"> Contact Us</a>
+              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.html"> About HooPoo</a>
               </li>
           </ul>
 
