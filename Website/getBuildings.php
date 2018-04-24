@@ -108,6 +108,10 @@ $name_arg = $_GET['search'];
              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' . $row['Bathroom_id'] . '" class="btn btn-info" role="button">See Reviews</a>
              </td>
     </tr>
+    <td>
+             <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.php?bathroom_id=' . $row['Bathroom_id'] . '" class="btn btn-info" role="button">Review</a>
+             </td>
+    </tr>
     </tr>';
  }
  mysqli_close($con);
