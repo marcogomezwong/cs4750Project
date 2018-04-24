@@ -103,7 +103,7 @@ mysqli_connect_error());
    <td>' . $row['building_id'] . ' </td>
    <td>' . $row['floor'] . ' </td>
    <td>
-            <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/flagService.php?bathroom_id=' . $row['Bathroom_id'] . ' " class="btn btn-info" role="button">Service Done</a> 
+            <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/serviceDone.php?bathroom_id=' . $row['Bathroom_id'] . ' " class="btn btn-info" role="button">Service Done</a> 
             </td>
    </tr>';
  }

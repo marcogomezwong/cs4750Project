@@ -12,7 +12,7 @@ mysqli_connect_error());
  $id = intval($_GET['bathroom_id']);
 
  $sql="UPDATE `Bathrooms` SET `service_needed` = '0' WHERE `Bathrooms`.`Bathroom_id` = $id";
-
+	
 
 
 
