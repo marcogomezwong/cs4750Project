@@ -20,6 +20,8 @@ $count = 0;
  if (!mysqli_query($con,$sql))
  {
  	die('Error: ' . mysqli_error($con));
+} else {
+	 header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
 }
  $SQL_select = "SELECT * FROM Bathrooms WHERE Bathroom_id = $_POST['bathroom_id'];";
  $result = mysqli_query($con,$SQL_select);
@@ -29,15 +31,6 @@ $count = 0;
 }
 
 
-$update_val = ($old_rating * $count + (int)$new_rating) / ($count + 1);
-
-$sql_update = "UPDATE Bathrooms SET overall_rating = $update_val WHERE Bathroom_id = $_POST['bathroom_id'];";
-if (!mysqli_query($con,$sql_update))
-{
- die('Error: ' . mysqli_error($con));
-}else{
- header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
-}
 
  mysqli_close($con);
 
