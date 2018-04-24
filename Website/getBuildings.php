@@ -104,7 +104,7 @@ mysqli_connect_error());
     <td>' . $row['floor'] . ' </td>
     <td>' . $row['overall_rating'] . ' </td>
     <td>
-             <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/serviceDone.php?bathroom_id=' . $row['Bathroom_id'] . ' " class="btn btn-info" role="button">Service Done</a>
+             <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' . $row['Bathroom_id'] . '" class="btn btn-info" role="button">See Reviews</a>
              </td>
     </tr>
     </tr>';

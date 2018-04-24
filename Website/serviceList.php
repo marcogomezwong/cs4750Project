@@ -81,7 +81,6 @@ mysqli_connect_error());
   <table class="data-table">
     <thead>
       <tr>
-        <th>Bathroom ID</th>
         <th>Building</th>
         <th>Floor</th>
         <th>Serviced?</th>
@@ -94,17 +93,16 @@ mysqli_connect_error());
 
  $status = 1;
 
- $sql="SELECT * FROM Bathrooms WHERE service_needed = $status";
+ $sql = "SELECT A.*, B.name FROM Bathrooms as A JOIN Building as B ON A.building_id = B.building_id WHERE service_needed = $status";
+
+// $sql="SELECT * FROM Bathrooms WHERE service_needed = $status";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
  while($row = mysqli_fetch_array($result)) {
   echo ' <tr>
-    <td>' . $row['Bathroom_id'] . ' </td>
-   <td>' . $row['building_id'] . ' </td>
+    <td>' . $row['name'] . ' </td>
    <td>' . $row['floor'] . ' </td>
-   <td>
-            <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/serviceDone.php?bathroom_id=' . $row['Bathroom_id'] . ' " class="btn btn-info" role="button">Service Done</a> 
-            </td>
+   <td><a href="http://plato.cs.virginia.edu/~wcc4ch/Project/serviceDone.php?bathroom_id=' . $row['Bathroom_id'] . ' " class="btn btn-info" role="button">Service Done</a></td>
    </tr>';
  }
  mysqli_close($con);
