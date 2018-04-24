@@ -30,7 +30,7 @@ $id = -1;
     }
 
     $SQL_get_id = "SELECT * FROM Building WHERE name like '$_POST[building_name]';";
-    $result_count = mysqli_query($con, $SQL_count);
+    $result_count = mysqli_query($con, $SQL_get_id);
     while($row_count = mysqli_fetch_array($result_count)) {
         $id = $row_count['building_id'];
     }
