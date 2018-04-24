@@ -19,6 +19,9 @@ $id = -1;
    }
 
  }
+
+echo $_POST[building_name]; 
+
  // if ($id == -1) {
  //    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$_POST[building_name]', 1);";
  //    if (!mysqli_query($con,$SQL_INSERT))
