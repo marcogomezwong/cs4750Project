@@ -23,7 +23,7 @@ $id = -1;
 
 
  if ($id == -1) {
-    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$_POST[building_name]', 1);";
+    $SQL_INSERT = "INSERT INTO Building(name, numBathrooms) VALUES ('$_POST[building_name]', 0);";
     if (!mysqli_query($con,$SQL_INSERT))
     {
      die('Error: ' . mysqli_error($con));
@@ -36,9 +36,9 @@ $id = -1;
     }
  }
 
- $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude)
+ $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude, service_needed)
  VALUES
-    ($id, '$_POST[rating]', 1, '$_POST[floor]','$_POST[longitude]','$_POST[latitude]');";
+    ($id, '$_POST[rating]', 1, '$_POST[floor]','$_POST[longitude]','$_POST[latitude]', 0);";
 
  if (!mysqli_query($con,$sql))
  {
