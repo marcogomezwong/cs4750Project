@@ -31,11 +31,11 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-              <li>
-              <a href="http://www.google.com"> About HooPoo</a>
+             <li>
+              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html"> Submit New Restroom</a>
               </li>
               <li>
-              <a href="http://www.google.com"> Contact Us</a>
+              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.html"> About HooPoo</a>
               </li>
           </ul>
 
@@ -107,9 +107,9 @@ $name_arg = $_GET['search'];
     <td>
              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' . $row['Bathroom_id'] . '" class="btn btn-info" role="button">See Reviews</a>
              </td>
-    </tr>
+    
     <td>
-             <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.php?bathroom_id=' . $row['Bathroom_id'] . '" class="btn btn-info" role="button">Review</a>
+             <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.php?bathroom_id=' . $row['Bathroom_id'] . '" class="btn btn-info" role="button">Review Bathroom</a>
              </td>
     </tr>
     </tr>';
@@ -120,6 +120,8 @@ $name_arg = $_GET['search'];
 
  </tbody>
  </table>
+
+ <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html" class="btn btn-info" role="button" style="margin-top: 15px">Back</a>
 
 </div>
 </div>

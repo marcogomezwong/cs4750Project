@@ -44,16 +44,19 @@ body {
 }
 
 .hooPoo-logo{
-	width: 45px;
-	height: 45px;
-	background-size: auto 100%;
-	background-repeat: no-repeat;
-	background-image: url(http://plato.cs.virginia.edu/~wcc4ch/Project/logo.png);
-	background-color: white;
-	position:relative;
-	float: left;
-	cursor:pointer;
-	top:2px;
+	width: 53px;
+    height: 50px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url(http://plato.cs.virginia.edu/~wcc4ch/Project/logo.png);
+    background-color: white;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    top: 2px;
+    margin-left: 15px;
+    margin-top: 12px;
+    margin-bottom: 18px;
 }
 
 
