@@ -77,7 +77,8 @@ mysqli_connect_error());
 <div class="col-sm-12">
 <div class="new-bathroom-form-container">
 
-<h1>Reviews</h1>
+
+<h1>Bathrooms</h1>
   <table class="data-table">
     <thead>
       <tr>
@@ -93,7 +94,7 @@ mysqli_connect_error());
 <?php
 
 
- $name_arg = $_GET['search'];
+$name_arg = $_GET['search'];
 
  $sql="SELECT A.*, B.name FROM Bathrooms as A JOIN Building As B ON A.building_id = B.building_id WHERE name like '%$name_arg%';";
  $result = mysqli_query($con,$sql);
