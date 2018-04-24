@@ -90,7 +90,7 @@ mysqli_connect_error());
 <?php
 
 
- $id = intval($_GET['bathroom_id']);
+ $name_arg = $_GET['search'];
 
  $sql="SELECT A.*, B.name FROM Bathrooms as A JOIN Building As B ON A.building_id = B.building_id WHERE name like '%$name_arg%';";
  $result = mysqli_query($con,$sql);
