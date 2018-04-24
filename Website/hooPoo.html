@@ -164,13 +164,9 @@ input[type=text]:focus {
             '<h1 id="firstHeading" class="firstHeading" style="font-size: 22px;"> ' + building + ', Floor: ' + type +  '</h1>'+
             '<div class="reivewLinks" id="bodyContent">'+
             '<p> Average Rating: ' + rating +
-            '<form action="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' + id + '">' +
-            '<input type="submit" value="See Reviews" />' +
-            '</form>' +
-            '<form action="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.html">' +
             '<br>' +
-            '<input type="submit" value="Rate Bathroom" />' +
-            '</form>' +
+            '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/reviewsList.php?bathroom_id=' + id + '" class="btn btn-info" role="button">See Reviews</a>' +
+            '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createRating.html" class="btn btn-info" role="button">Review Bathroom</a>' +
             '</div>'+
             '</div>';
 

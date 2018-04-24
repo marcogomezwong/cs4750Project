@@ -219,6 +219,17 @@ padding-bottom: 20px;
 }
 
 
+.btn {
+
+	margin-top: 6px;
+    margin-right: 10px;
+}
+
+
+
+
+
+
 		/* Table */
 		.data-table {
 			border-collapse: collapse;
