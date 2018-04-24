@@ -21,7 +21,7 @@ if (!mysqli_query($con,$sql))
 {
  	die('Error: ' . mysqli_error($con));
  }else
- { header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php');
+ { //header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php');
  }
   mysqli_close($con);
  ?>
