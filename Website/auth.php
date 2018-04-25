@@ -18,7 +18,11 @@
 			$_SESSION['bg_id'] = 10;
 			$_SESSION['cust_id'] = -1;
 			
-
+			$sql_cust = "SELECT * FROM Custodians WHERE username = $username";
+			$result = mysqli_query($con,$sql_cust);
+			while($row = mysqli_fetch_array($result)) {
+				$_SESSION['cust_id'] = $row['custodian_id'];
+			}
 			header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
 		} else {
 			header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/login.php');
