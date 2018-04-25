@@ -12,7 +12,7 @@ mysqli_connect_error());
  $id = intval($_GET['bathroom_id']);
 
  //$sql="UPDATE `Bathrooms` SET `service_needed` = '0' WHERE `Bathrooms`.`Bathroom_id` = $id";
-$sql="DELETE FROM Reports WHERE 'bathroom_id' = $id";
+$sql="DELETE FROM Reports WHERE 'Bathroom_id' = $id";
 $sql="INSERT INTO Supplies (custodian_id, bathroom_id) VALUES ($_SESSION['cust_id'], $id)";
 
 
