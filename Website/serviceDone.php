@@ -29,9 +29,18 @@ $sql2="INSERT INTO Supplies (custodian_id, Bathroom_id) VALUES ($cust, $id)";
 if (!mysqli_query($con,$sql2))
 {
  	die('Error: ' . mysqli_error($con));
+ }
+
+$sql3="UPDATE 'Custodians' SET 'num_services' = 'num_services+1' WHERE 'custodian_id' = $cust";
+
+if (!mysqli_query($con,$sql3))
+{
+ 	die('Error: ' . mysqli_error($con));
  }else
  {
  header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php');
  }
   mysqli_close($con);
+ 
  ?>
+
