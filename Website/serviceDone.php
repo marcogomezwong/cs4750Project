@@ -22,7 +22,6 @@ if (!mysqli_query($con,$sql))
  {
  	header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php');
  }
-  mysqli_close($con);
 
 $cust = $_SESSION['cust_id'];
 
