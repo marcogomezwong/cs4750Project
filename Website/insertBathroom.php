@@ -36,14 +36,21 @@ $id = -1;
     }
  }
 
- $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude, service_needed)
+ $sql = "INSERT INTO Bathrooms (building_id, overall_rating, rating_count, floor, longitude, latitude)
  VALUES
-    ($id, '$_POST[rating]', 1, '$_POST[floor]','$_POST[longitude]','$_POST[latitude]', 0);";
+    ($id, '$_POST[rating]', 1, '$_POST[floor]','$_POST[longitude]','$_POST[latitude]');";
 
  if (!mysqli_query($con,$sql))
  {
  	die('Error: ' . mysqli_error($con));
  }else{
+    $bath = 0;
+    $sql = "SELECT * FROM Bathrooms ORDER BY Bathroom_id DESC";
+    $result_b = mysqli_query($con, $sql);
+    while($rows = mysqli_fetch_array($result_b)) {
+        $bath = $rows['bathroom_id'];
+    }
+    $sql_located = "INSERT INTO Located_in(building_id, bathroom_id) VALUES ($id, $bath);";
 	  header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
  }
 
