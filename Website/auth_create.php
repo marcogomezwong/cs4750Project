@@ -17,6 +17,10 @@
 			if (!mysqli_query($con,$sql_insert)) {
 			 	die('Error: ' . mysqli_error($con));
 			} else {
+				$sql_bg = "INSERT INTO Bathrom_goer (username, num_reviews) VALUES ('$username', 0)";
+				if (!mysqli_query($con,$sql_bg)) {
+			 		die('Error: ' . mysqli_error($con));
+				}	
 				header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/login.php');
 			}
 		} else {
