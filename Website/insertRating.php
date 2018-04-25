@@ -19,6 +19,17 @@ $count = 0;
  if (!mysqli_query($con,$sql))
  {
  	die('Error: ' . mysqli_error($con));
+} 
+
+session_start();
+$bgID = $_SESSION['bg_id'];
+
+ //$sql="UPDATE `Bathrooms` SET `service_needed` = '1' WHERE `Bathrooms`.`Bathroom_id` = $id";
+$sql2="UPDATE Bathroom_goer SET num_reviews = num_reviews+1 WHERE bathroom_goer_id = $bgID";
+
+if (!mysqli_query($con,$sql2))
+ {
+ 	die('Error: ' . mysqli_error($con));
 } else {
 	 header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
 }
