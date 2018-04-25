@@ -17,11 +17,12 @@ mysqli_connect_error());
 $sql="INSERT INTO Reports(bathroom_id, bathroom_goer_id) VALUES ($id, $bathroomID)";
 
 
+
 if (!mysqli_query($con,$sql))
 {
  	die('Error: ' . mysqli_error($con));
  }else
- { header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
+ { header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
  }
   mysqli_close($con);
  ?>
