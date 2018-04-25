@@ -30,16 +30,63 @@
         </a>
         </div>
         <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav navbar-right">
-               <li>
-              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html"> Submit New Restroom</a>
+           <ul class="nav navbar-nav navbar-right" style="margin-top: 13px">
+              <li>
+               <?php
+                  session_start();
+                  $user = $_SESSION['username'];
+                  if ($user != "") {
+             echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.php'> Submit New Restroom</a>";
+
+            }else{
+
+            }
+            ?>
               </li>
               <li>
               <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.html"> About HooPoo</a>
               </li>
               <li>
-              <a href="http://www.google.com"> Contact Us</a>
+              <?php
+                  session_start();
+                  $cust_id = $_SESSION['cust_id'];
+                  if ($cust_id != -1) {
+              echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php'> Service Bathroom</a>";
+                }else{
+
+                }
+
+              ?>
               </li>
+              <li>
+                <?php
+                  session_start();
+                  $user = $_SESSION['username'];
+                  if ($user != "") {
+
+                  echo "<li>";
+                  echo '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/logout.php"> Logout </a>';
+                  echo "</li>";
+                    
+                  echo "<li>";
+                  echo "<div class='helloUser'>
+                   <p style='padding-right:5px; padding-left:5px;'> Hello, " . $user . "</p>";
+                  echo "</div>";
+                  echo "</li>";
+
+                } else {
+
+                  echo '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/login.php"> Login </a>';
+
+                }
+                ?>
+        
+                
+
+
+              </li>
+              
+             
           </ul>
 
         </div>

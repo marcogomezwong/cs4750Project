@@ -44,7 +44,7 @@
             ?>
               </li>
               <li>
-              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.html"> About HooPoo</a>
+              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.php"> About HooPoo</a>
               </li>
               <li>
               <?php

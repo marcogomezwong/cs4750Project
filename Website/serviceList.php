@@ -36,7 +36,7 @@
                   session_start();
                   $user = $_SESSION['username'];
                   if ($user != "") {
-             echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html'> Submit New Restroom</a>";
+             echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.php'> Submit New Restroom</a>";
 
             }else{
 

@@ -69,7 +69,7 @@ input[type=text]:focus {
                   session_start();
                   $user = $_SESSION['username'];
                   if ($user != "") {
-             echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html'> Submit New Restroom</a>";
+             echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.php'> Submit New Restroom</a>";
 
             }else{
 
@@ -86,7 +86,7 @@ input[type=text]:focus {
                   if ($cust_id != -1) {
               echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php'> Service Bathroom</a>";
                 }else{
-                  
+
                 }
 
               ?>
@@ -174,7 +174,7 @@ input[type=text]:focus {
 
                       var mapOptions = {
                           center: new google.maps.LatLng(38.0344642, -78.5125328),
-                          zoom: 15,
+                          zoom: 16,
                           mapTypeId: google.maps.MapTypeId.ROADMAP
                       }
                   var map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -233,7 +233,11 @@ input[type=text]:focus {
                     map: map,
                     position: point,
                     label: icon.label
+
                   });
+                  if(rating >= 2.5){
+                  marker.setIcon('http://maps.google.com/mapfiles/ms/icons/green-dot.png');
+              }
                   marker.addListener('click', function() {
                     //infoWindow.setContent(infowincontent);
                     sessionStorage.setItem('bathroom_id', id);
