@@ -13,9 +13,11 @@
 		$result = mysqli_query($con, $sql);
 		$one = mysqli_num_rows($result);
 		if ($one == 1) {
-			echo "Logged in as " . $username . "<br>";
+			session_start();
+			$_SESSION['username'] = $username;
+			header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
 		} else {
-			echo "log in failed";
+			header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/login.php');
 		}
 
 	}

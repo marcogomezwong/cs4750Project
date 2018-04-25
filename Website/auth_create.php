@@ -17,12 +17,10 @@
 			if (!mysqli_query($con,$sql_insert)) {
 			 	die('Error: ' . mysqli_error($con));
 			} else {
-				session_start();
-				$_SESSION['username'] = $username;
-				 echo "account created";
+				header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/login.php');
 			}
 		} else {
-			echo "account already exists";
+			header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/createaccount.php');
 		}
 
 	}
