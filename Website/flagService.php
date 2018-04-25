@@ -10,8 +10,11 @@ mysqli_connect_error());
 
 
  $id = intval($_GET['bathroom_id']);
+ session_start();
+$_SESSION['bg_id'];
 
- $sql="UPDATE `Bathrooms` SET `service_needed` = '1' WHERE `Bathrooms`.`Bathroom_id` = $id";
+ //$sql="UPDATE `Bathrooms` SET `service_needed` = '1' WHERE `Bathrooms`.`Bathroom_id` = $id";
+$sql="INSERT INTO Reports(bathroom_id, bathroom_goer_id) VALUES ($id, $_SESSION['bg_id'])";
 
 
 
@@ -20,7 +23,8 @@ mysqli_connect_error());
 if (!mysqli_query($con,$sql))
 {
  	die('Error: ' . mysqli_error($con));
- } else { header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
+ }else
+ { header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
  }
   mysqli_close($con);
  ?>
