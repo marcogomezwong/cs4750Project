@@ -65,7 +65,16 @@ input[type=text]:focus {
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right" style="margin-top: 13px">
               <li>
-              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html"> Submit New Restroom</a>
+               <?php
+                  session_start();
+                  $user = $_SESSION['username'];
+                  if ($user != "") {
+             echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/createBathroom.html'> Submit New Restroom</a>";
+
+            }else{
+
+            }
+            ?>
               </li>
               <li>
               <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.html"> About HooPoo</a>
