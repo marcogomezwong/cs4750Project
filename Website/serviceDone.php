@@ -15,11 +15,22 @@ session_start();
  //$sql="UPDATE `Bathrooms` SET `service_needed` = '0' WHERE `Bathrooms`.`Bathroom_id` = $id";
 $sql="DELETE FROM Reports WHERE 'Bathroom_id' = $id";
 
-$sql="INSERT INTO Supplies (custodian_id, Bathroom_id) VALUES ($_SESSION['cust_id'], $id)";
-
-
-
 if (!mysqli_query($con,$sql))
+{
+ 	die('Error: ' . mysqli_error($con));
+ }else
+ {
+ 	header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php');
+ }
+  mysqli_close($con);
+
+$cust = $_SESSION['cust_id'];
+
+$sql2="INSERT INTO Supplies (custodian_id, Bathroom_id) VALUES ($cust, $id)";
+
+
+
+if (!mysqli_query($con,$sql2))
 {
  	die('Error: ' . mysqli_error($con));
  }else
