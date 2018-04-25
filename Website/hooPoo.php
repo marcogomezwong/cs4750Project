@@ -78,14 +78,30 @@ input[type=text]:focus {
                   session_start();
                   $user = $_SESSION['username'];
                   if ($user != "") {
-                  echo "Hello, " . $user;
+
+                  echo "<li>";
+                  echo '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/logout.php"> Logout </a>';
+                  echo "</li>";
+                    
+                  echo "<li>";
+                  echo "<div class='helloUser'>
+                   <p style='padding-right:5px; padding-left:5px;'> Hello, " . $user . "</p>";
+                  echo "</div>";
+                  echo "</li>";
+
                 } else {
+
+                  echo '<a href="http://plato.cs.virginia.edu/~wcc4ch/Project/login.php"> Login </a>';
+
                 }
                 ?>
-                </li>
-                <li>
-                <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/login.php"> Login </a>
+        
+                
+
+
               </li>
+              
+             
           </ul>
 
         </div>
