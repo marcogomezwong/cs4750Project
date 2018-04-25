@@ -51,6 +51,11 @@ $id = -1;
         $bath = $rows['bathroom_id'];
     }
     $sql_located = "INSERT INTO Located_in(building_id, bathroom_id) VALUES ($id, $bath);";
+    if (!mysqli_query($con,$sql))
+     {
+      die('Error: ' . mysqli_error($con));
+     }
+
 	  header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
  }
 
