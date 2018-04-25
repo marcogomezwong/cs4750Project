@@ -15,6 +15,10 @@
 		if ($one == 1) {
 			session_start();
 			$_SESSION['username'] = $username;
+			$_SESSION['bg_id'] = 10;
+			$_SESSION['cust_id'] = -1;
+			
+
 			header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
 		} else {
 			header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/login.php');
