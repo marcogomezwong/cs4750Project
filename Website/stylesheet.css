@@ -29,6 +29,8 @@ body {
 
 	margin-right: 10px;
 	margin-bottom: 10px;
+	font-size: 20px;
+
 
 }
 
@@ -39,6 +41,18 @@ body {
 	color: white;
 	text-align: center;
 }
+
+
+.loginForm{
+	padding-left: 15px;
+	padding-bottom: 15px;
+}
+
+.loginForm input[type=text]{
+	color: black;
+}
+
+
 
 .home-page-background nav{
 	background:rgba(0,0,0,0.7);
@@ -60,6 +74,17 @@ body {
 	border-radius: 5px;
 	color: white;
 	background: rgba(0,0,0,0.6);
+}
+
+
+.login-contatiner{
+	border-radius: 5px;
+	color: white;
+	background: rgba(0,0,0,0.6);
+	margin:auto;
+	width:50%;
+	position: relative;
+    top: 130px;
 }
 
 .centered-text{

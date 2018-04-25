@@ -26,7 +26,7 @@
 <div class="col-sm-12">
 <div class="new-bathroom-form-container">
 
-<div class="home-title-contatiner">
+<div class="login-contatiner  loginForm" id="formLogin">
 
 <form id='login' action='auth.php' method='post' accept-charset='UTF-8'>
 <fieldset >
@@ -40,7 +40,9 @@
 <label class="loginLabel" for='password' >Password*:</label>
 <input class="loginLabel" type='password' name='password' id='password' maxlength="50" />
 
-<input type='submit' name='Submit' value='Submit' />
+<br>
+
+<input type='submit' name='Submit' value='Submit' class="btn btn-info" />
 
 </fieldset>
 </form>
