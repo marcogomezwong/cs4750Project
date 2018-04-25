@@ -45,12 +45,12 @@ $id = -1;
  	die('Error: ' . mysqli_error($con));
  }else{
     $bath = 0;
-    $sql = "SELECT * FROM Bathrooms ORDER BY Bathroom_id DESC";
+    $sql = "SELECT * FROM Bathrooms ORDER BY Bathroom_id DESC LIMIT 1";
     $result_b = mysqli_query($con, $sql);
     while($rows = mysqli_fetch_array($result_b)) {
-        $bath = $rows['bathroom_id'];
+        $bath = $rows['Bathroom_id'];
     }
-    $sql_located = "INSERT INTO Located_in(building_id, bathroom_id) VALUES ($id, $bath);";
+    $sql_located = "INSERT INTO Located_in (building_id, bathroom_id) VALUES ($id, $bath);";
     if (!mysqli_query($con,$sql_located))
      {
       die('Error: ' . mysqli_error($con));
