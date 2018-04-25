@@ -47,7 +47,16 @@
               <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/aboutus.html"> About HooPoo</a>
               </li>
               <li>
-              <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php"> Service Bathroom</a>
+              <?php
+                  session_start();
+                  $cust_id = $_SESSION['cust_id'];
+                  if ($cust_id != -1) {
+              echo "<a href='http://plato.cs.virginia.edu/~wcc4ch/Project/serviceList.php'> Service Bathroom</a>";
+                }else{
+                  
+                }
+
+              ?>
               </li>
               <li>
                 <?php
