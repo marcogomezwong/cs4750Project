@@ -11,10 +11,10 @@ mysqli_connect_error());
 
  $id = intval($_GET['bathroom_id']);
  session_start();
-	$_SESSION['bg_id'];
+	$bg = $_SESSION['bg_id'];
 
  //$sql="UPDATE `Bathrooms` SET `service_needed` = '1' WHERE `Bathrooms`.`Bathroom_id` = $id";
-$sql="INSERT INTO Reports(bathroom_id, bathroom_goer_id) VALUES ($id, $_SESSION['bg_id'])";
+$sql="INSERT INTO Reports(bathroom_id, bathroom_goer_id) VALUES ($id, $bg);";
 
 
 
