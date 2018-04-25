@@ -93,7 +93,9 @@ mysqli_connect_error());
 
  $status = 1;
 
- $sql = "SELECT * FROM Reports AS a JOIN Bathrooms AS b ON a.bathroom_id = b.Bathroom_id AS a JOIN Building AS b ON a.building_id = b.building_id";
+
+ $sql = "SELECT * FROM Reports AS a JOIN Bathrooms AS b ON a.Bathroom_id = b.Bathroom_id JOIN Building AS c ON b.building_id = c.building_id";
+
 // $sql="SELECT * FROM Bathrooms WHERE service_needed = $status";
  $result = mysqli_query($con,$sql);
  // Print the data from the table row by row
