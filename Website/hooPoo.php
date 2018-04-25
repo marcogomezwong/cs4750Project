@@ -77,7 +77,11 @@ input[type=text]:focus {
                 <?php
                   session_start();
                   $user = $_SESSION['username'];
+                  if ($user != "") {
                   echo "Hello, " . $user;
+                } else {
+                  
+                }
                 ?>
                 </li>
                 <li>
