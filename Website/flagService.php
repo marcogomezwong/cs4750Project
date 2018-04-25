@@ -16,6 +16,7 @@ mysqli_connect_error());
  //$sql="UPDATE `Bathrooms` SET `service_needed` = '1' WHERE `Bathrooms`.`Bathroom_id` = $id";
 $sql="INSERT INTO Reports(bathroom_id, bathroom_goer_id) VALUES ($id, $bathroomID)";
 
+
 if (!mysqli_query($con,$sql))
 {
  	die('Error: ' . mysqli_error($con));
