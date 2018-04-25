@@ -24,26 +24,28 @@
 <div class="col-sm-12">
 <div class="new-bathroom-form-container">
 
-<form action="auth_create.php" method='post' style="border:1px solid #ccc">
-  <div class="container">
-    <h1>Sign Up</h1>
-    <p>Please fill in this form to create an account.</p>
+<div class="login-contatiner  loginForm" id="formLogin">
+
+<form action="auth_create.php" method='post'>
+ 
+    <h1 class="loginLegend" style="padding-top: 15px;">Sign Up</h1>
+    <p style="text-align: center;">Please fill in this form to create an account.</p>
     <hr>
 
-    <label for="username"><b>Username</b></label>
-    <input type="text" placeholder="Enter Email" name="username" required>
+    <label class="loginLabel"  for="username"><b>Username</b></label>
+    <input class="loginLabel"  type="text" placeholder="Enter Email" name="username" required>
 
-    <label for="password"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" required>
+    <br>
 
-    <label for="password_repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="password_2" required>
-    
-    <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <button type="submit" class="signupbtn">Sign Up</button>
-    </div>
-  </div>
+    <label class="loginLabel" for="password"><b>Password</b></label>
+    <input  class="loginLabel" type="password" placeholder="Enter Password" name="password" required>
+    <br>
+
+    <label  class="loginLabel"  for="password_repeat"><b>Repeat Password</b></label>
+    <input  class="loginLabel" type="password" placeholder="Repeat Password" name="password_2" required>
+
+    <br>
+        <button type="submit" class="btn btn-info">Sign Up</button>
 </form>
 
 </div>

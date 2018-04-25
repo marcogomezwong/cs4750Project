@@ -52,6 +52,10 @@ body {
 	color: black;
 }
 
+.loginForm input[type=password]{
+	color: black;
+}
+
 
 
 .home-page-background nav{
