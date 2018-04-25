@@ -25,7 +25,7 @@
       <div class="col-xs-12">
       <nav class="nav navbar-default rateForm" roll="navigation">
         <div class="navbar-header">
-        <a class="hooPoo-logo" href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html" id="logo">
+        <a class="hooPoo-logo" href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php" id="logo">
         <div class="navbar-brand">HooPoo</div>
         </a>
         </div>

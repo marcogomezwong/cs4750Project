@@ -25,7 +25,7 @@
       <div class="col-xs-12">
       <nav class="nav navbar-default rateForm" roll="navigation">
         <div class="navbar-header">
-        <a class="hooPoo-logo" href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html" id="logo">
+        <a class="hooPoo-logo" href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php" id="logo">
         <div class="navbar-brand">HooPoo</div>
         </a>
         </div>
@@ -121,7 +121,7 @@ $name_arg = $_GET['search'];
  </tbody>
  </table>
 
- <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html" class="btn btn-info" role="button" style="margin-top: 15px">Back</a>
+ <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php" class="btn btn-info" role="button" style="margin-top: 15px">Back</a>
 
 </div>
 </div>

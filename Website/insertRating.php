@@ -20,7 +20,7 @@ $count = 0;
  {
  	die('Error: ' . mysqli_error($con));
 } else {
-	 header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
+	 header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
 }
 
  mysqli_close($con);

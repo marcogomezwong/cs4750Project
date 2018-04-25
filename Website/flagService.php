@@ -20,8 +20,7 @@ mysqli_connect_error());
 if (!mysqli_query($con,$sql))
 {
  	die('Error: ' . mysqli_error($con));
- }else
- { header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.html');
+ } else { header('Location: http://plato.cs.virginia.edu/~wcc4ch/Project/hooPoo.php');
  }
   mysqli_close($con);
  ?>
