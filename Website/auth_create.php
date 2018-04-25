@@ -17,6 +17,8 @@
 			if (!mysqli_query($con,$sql_insert)) {
 			 	die('Error: ' . mysqli_error($con));
 			} else {
+				session_start();
+				$_SESSION['username'] = $username;
 				 echo "account created";
 			}
 		} else {
