@@ -24,7 +24,7 @@
 <div class="col-sm-12">
 <div class="new-bathroom-form-container">
 
-<form action="auth_create.php" style="border:1px solid #ccc">
+<form action="auth_create.php" method='post' style="border:1px solid #ccc">
   <div class="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
