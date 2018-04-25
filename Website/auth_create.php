@@ -13,8 +13,9 @@
 		$result = mysqli_query($con, $sql);
 		$one = mysqli_num_rows($result);
 		if ($one == 0) {
-			$sql_insert = "INSERT INTO Accounts(username, password) VALUES ($_POST['username'], $_POST['password']);";
-			echo "account created <br>";
+			$sql_insert = "INSERT INTO Accounts(username, password) VALUES ('$_POST['username']', '$_POST['password']');";
+			$result = mysqli_query($con, $sql_insert);
+			echo "account created";
 		} else {
 			echo "account already exists";
 		}
