@@ -80,10 +80,10 @@ input[type=text]:focus {
                   if ($user != "") {
                   echo "Hello, " . $user;
                 } else {
-                  
+                  <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/login.php"> Login </a>
                 }
                 ?>
-                <a href="http://plato.cs.virginia.edu/~wcc4ch/Project/login.php"> Login </a>
+                
               </li>
           </ul>
 
