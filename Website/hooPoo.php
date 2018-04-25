@@ -80,7 +80,6 @@ input[type=text]:focus {
                   if ($user != "") {
                   echo "Hello, " . $user;
                 } else {
-                  
                 }
                 ?>
                 </li>
